@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+  --text-color: #000;
+  --red-color: red;
+  --bg-color: #fff
+}
+html{
+  font-size: 62.5%;
+
+}
+body{
+  overflow: hidden;
+}
+.Home .img{
+  width:45% ;
+  position: absolute;
+  right: 2rem;
+  transform: scale(0);
+  animation: loadAnimation_img 1s ease forwards 1s;
+}
+.Home{
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10rem;
+  /* transform: scale(0); */
+}
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  padding: 3rem 10rem;
+  font-size: 2.2rem;
+  animation: loadAnimation 1s ease;
+}
+header h1{
+  color: rgb(255, 255, 255);
+  background: linear-gradient(#d60707,#012e17);
+  border-radius: 10px;
+}
+header nav a{
+  text-decoration: none;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-size: 2.2rem;
+  transition: .2s;
+  font-weight: 600;
+}
+header nav a:hover,
+header nav .active
+{
+color: var(--red-color);
+}
+.text_box{
+margin-top: 30px;
+color: var(--text-color);
+width: 45%;
+}
+.text_box h1{
+  font-size: 6rem;
+  
+  color: var(--text-color);
+  animation: loadAnimation 1s ease forwards .2s;
+}
+.text_box h1:nth-child(2){
+  color: var(--red-color);
+}
+.text_box p{
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  animation: loadAnimation 1s ease forwards .6s;
+}
+.text_box .btn{
+  color: var(--red-color);
+  padding: .8rem 4.5rem;
+  border: .2rem solid var(--red-color);
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: .4rem;
+  transition: .3s;
+  margin-top: 2rem;
+  animation: loadAnimation 1s ease forwards .2s;
+}
+.text_box .btn:hover{
+  background-color: var(--red-color);
+  box-shadow: 0 0 1.5rem var(--red-color);
+  color: var(--bg-color);
+}
+.text_box *{
+  opacity: 0;
+}
+@keyframes loadAnimation{
+  0%{
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes loadAnimation_img{
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
